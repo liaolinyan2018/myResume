@@ -4,58 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//at.alicdn.com/t/font_912092_dkghl5t63so.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
     <title>廖淋艳的个人简历</title>
     <link rel="stylesheet" href="./style.css">
  </head>
  <body>
-    <div class="topNavBar clearfix">
-        <a href="#" class="logo" alt="logo" style="float:left;">
-            <span class="rs">RS</span><span class="card">card</span>
-        </a>
-        <nav style="float:right;">    
-         <ul class="clearfix">
-            <li ><a href="#">关于</a></li>        
-            <li ><a href="#">技能</a></li>
-            <li ><a href="#">作品</a></li>
-            <li ><a href="#">博客</a></li>
-            <li ><a href="#">日历</a></li>
-            <li ><a href="#">联系方式</a></li>
-            <li ><a href="#">其他</a></li>
-         </ul>
-        </nav>
+    <div class="topNavBar">
+        <div class="topNavBar-inner clearfix">
+                <a href="#" class="logo" alt="logo" style="float:left;">
+                        <span class="rs">RS</span><span class="card">card</span>
+                </a>
+                <nav style="float:right;">    
+                     <ul class="clearfix">
+                        <li ><a href="#">关于</a></li>        
+                        <li ><a href="#">技能</a></li>
+                        <li ><a href="#">作品</a></li>
+                        <li ><a href="#">博客</a></li>
+                        <li ><a href="#">日历</a></li>
+                        <li ><a href="#">联系方式</a></li>
+                        <li ><a href="#">其他</a></li>
+                     </ul>
+                </nav>
+        </div>
     </div>
-    <div class="banner" style="background-image：url(#)"></div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
     <main>
-        <div class="card">
-                <div class="profile">
-                        <div class="picture">
-                                <img src="#" alt="我的头像">
-                        </div>
-                        <!--卡片上部左右分界-->
-                        <div class="text">
-                                <span class="welcome">Hello</span>
+        <div class="userCard">
+                <div class="profile clearfix">
+                    <div class="picture">
+                                <img src="./img/me.jpg" alt="我的头像">
+                    </div>
+                    <div class="text">
+                                <span class="welcome">Hello<span class="triangle"></span>
+                                </span>
                                 <h1>廖淋艳</h1>
                                 <p>前端开发工程师</p>
                                 <hr>
-                                <dl>
+                                <dl class="clearfix">
                                     <dt>年龄</dt>
-                                    <dd>22</dd>
+                                    <dd>2x</dd>
                                     <dt>所在城市</dt>
                                     <dd>北京</dd>
+                                    <dt>联系方式</dt>
+                                    <dd>136xxxxxx18</dd>
                                     <dt>邮箱</dt>
-                                    <dd>linyan.liao@gmail.com</dd>
+                                    <dd>xxx@gmail.com</dd>
                                 </dl>                            
-                        </div>                  
-                </div>
-                <!--卡片上下分界-->
+                    </div>                  
+                </div>                
                 <footer class="media">
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-Facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-weibo"></use>
+                            </svg>
+                    </a>
+                    <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-index-twitter"></use>
+                            </svg>
+                    </a>
+                    <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-google"></use>
+                            </svg>
+                    </a>
                 </footer>
         </div>
 
