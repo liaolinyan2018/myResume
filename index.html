@@ -6,17 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="//at.alicdn.com/t/font_912092_dkghl5t63so.js"></script>
     <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
+        .icon {width: 1em; height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
+        .site-welcome{display: none;position:fixed;top:0px;left:0px;width:100%;height:100%;background: rgb(239, 239, 239);
+                      justify-content: center;align-items: center;}
+        .site-welcome.active{display: flex;}
+        .loading{height:200px;width:200px;position:relative;}
+        .loading::before,.loading::after{content: '';position:absolute;height:0px;width:0px;border-radius:50%;background:black;
+                                        top:0px;bottom:0px;right:0px;left:0px;margin:auto;animation: s 1.6s linear infinite;}
+        .loading::after{animation-delay: 0.85s;}
+        @keyframes s{   0%{width: 0px;height: 0px;opacity: 0.7;}
+                        100%{width: 70px;height: 70px;opacity: 0;}  }
     </style>
     <title>廖淋艳的个人简历</title>
     <link rel="stylesheet" href="./style.css">
  </head>
+
  <body>
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
+     
     <div class="topNavBar">
         <div class="topNavBar-inner clearfix">
                 <a href="#" class="logo" alt="logo" style="float:left;">
@@ -181,6 +190,9 @@
                 <img src="./img/3.jpg" alt="作品3">
             </div>
         </div>
+        <script>
+            siteWelcome.classList.remove('active');
+        </script>
     </section>
  </body>
 </html>
