@@ -1,339 +1,67 @@
-body{
-  background: rgb(239, 239, 239);
-  margin:0;
-}
-*{
-  margin: 0px;
-  padding: 0px;
-}
-ul,ol{
-  list-style:none;
-}
-h1,h2,h3,h4,h5,h6{
-  font-weight: normal;
-}
-hr{
-  border:none;
-  border:1px solid rgb(222, 222, 222);
-}
-.clearfix::after{
-  content:'';
-  display:block;
-  clear:both;
-}
-.topNavBar nav>ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-.topNavBar nav>ul>li{
-  float:left;      
-  margin-left:17px;
-  margin-right:17px;
-}
-.topNavBar nav>ul>li>a{
-  font-size:12px;
-  color:#b7b7b7;
-  font-weight:bold;
-  border-top:3px solid transparent;
-  border-bottom:3px solid transparent;
-  padding-top:10px;
-  padding-bottom:10px;
-  display:block;
-  text-decoration: none;
-}
-.topNavBar nav>ul>li>a:hover{
-  border-bottom:3px solid #e06563;
-}
-.topNavBar{
-  padding:10px 0px;
-  position:fixed;
-  top:0;
-  left:0;
-  width: 100%;
-}
-.topNavBar-inner{
-  padding:0px 20px;
-}
-.topNavBar .logo{
-  font-size: 25px;
-  font-family: "Yu Gothic";
-  color:inherit;
-  text-decoration: none;
-  padding-top:0px;
-  padding-bottom:0px;
-}
-.topNavBar .logo>.rs{
-  margin-right:4px;
-  color:#E6686A;
-}
-.topNavBar .logo>.card{
-  color:#9A9DA2;
-}
-.banner{
-  background-image: url(./img/cover.jpg); 
-  height:515px;
-  background-position:center center;
-  background-size: cover;
-}
-.banner .mask{
-  height:515px;
-  background-color: rgba(0,0,0,0.63);
-}
-.userCard{
-  max-width:930px;
-  margin-left:auto;
-  margin-right:auto;
-  background-color: rgb(253, 253, 253);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-}
-img{
-  width: 280px;
-  height: 390px;
-}
-.userCard .welcome{
-  display: inline-block;
-  background-color: #e8676b;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  padding:8px 12px;
-  margin-bottom:38px;
-  position: relative;
-}
-.userCard .profile{
-  padding:57px 54px 15px;
-}
-.userCard .picture{
-  float: left;
-  padding: 10px 72px 0px 10px;
-}
-.userCard .text{
-  float: left;
-}
-.userCard .text h1{
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.userCard .text p{
-  margin-bottom: 28px;
-}
-.userCard .text dl{
-  margin-top: 28px;
-}
-.userCard .text dl>dt{
-  float:left;
-  width:40%;
-  margin-bottom:22px;
-  font-weight:bold;
-}
+body{background: rgb(239, 239, 239);margin:0;}
+*{margin: 0px;padding: 0px;}
+ul,ol{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
 
-.userCard .text dl>dd{
-  float:left;
-  width:60%;
-  margin-bottom:22px;
-  color: #9da0a7;
-}
-
-.userCard .welcome .triangle{
-    display: block;
-    border: 10px solid transparent;
-    width: 0px;
-    border-left-color: #e8676b;
-    border-top-width: 0px;
-    position: absolute;
-    top: 100%;
-    left:5px;
-}
-.userCard footer{
-  background-color:#E6686A;
-  text-align: center;
-  padding:15px 0px;
-}
-.userCard footer a{
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 50%;
-  width: 46px;
-  line-height: 30px;
-  padding: 8px 0px;
-  margin:5px 15px;
-}
-.userCard footer a:hover{
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.userCard footer a svg{
-  color: #fff;
-   width:26px;
-   height:30px;
-   vertical-align: top;
-}
-body>main{
-  margin-top:-340px;
-}
-
-.download_txt,.skills,.portfolio{
-  text-align: center;
-  max-width: 930px;
-  margin-left: auto;
-  margin-right: auto;
-}
-body .download_txt .download_txt_wrapper a{
-  display:inline-block;
-  text-decoration: none;
-  color: #3d4451;
-  font-size：15px;
-  line-height: 1.1;
-  font-weight: 700;
-  border: 1px solid #cbcdcf;
-  border-radius: 3px;
-  padding: 21px 55px;
-  margin:35px 5px 30px;
-  letter-spacing: 0.01em;
-  transition: box-shadow 0.3s;
-}
-body .download_txt .download_txt_wrapper a:hover{
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-}
-
-body .download_txt p{
-  font-size:20px;
-  line-height:1.6;
-  font-family: 楷体;
-}
-.skills h2,.portfolio h2{
-  color: #3d4451;
-  font-size: 34px;
-  line-height: 1.2;
-  font-weight: 600;
-  text-align: center;
-  margin: 0 0 25px;
-
-}
-.skills,.portfolio{
-  padding:70px 0 0;
-}
-body .skills ol{
-  background: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  padding:51px 40px 6px;
-}
-body .skills ol>li{
-  float:left;
-  width:48.5%;
-  margin-bottom:40px;
-}
-body .skills ol>li:nth-child(even){
-  float:right;
-}
-
-body .skills ol>li>h3{
-  font-size: 14px;
-  margin-bottom:5px;
-  text-align: initial;
-
-}
-.skills .progressBar{
-  height:5px;
-  line-height: 1.5;
-  border-radius: 5px;
-  background-color:rgb(250, 225, 225);
-  
-}
-.skills .progressBar .progress{
-  width:30%;
-  height:100%;
-  border-radius: 5px;
-  background-color: #e8676b;
-}
-.portfolio>nav{
-  display: inline-block;
-  vertical-align: top;
-}
-.portfolio>nav>ol{
- display:inline-block;
- vertical-align:top;
-
-}
-.portfolio>nav>ol>li{
-  float:left;
-  padding-right:34px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.5;
-  cursor: pointer;
-}
-.portfolio>nav>ol>li:nth-child(3){
-  padding-right:0px;
-}
-.portfolio{
-  margin-bottom:70px;
-}
-.portfolio nav .portfolioBar{
-  height: 5px;
-  margin: 10px auto 0;
-  background-color: #fff;
-  border-radius: 5px;
-}
-.portfolio nav .portfolioBar .portfolioBar-inner{
-  height:100%;
-  border-radius: 5px;
-  background-color: #e8676b;
-  transition-duration: 1s;
-}
-.portfolio nav .portfolioBar.state1 .portfolioBar-inner{
-  width:24px;
-  margin-left:0;
-}
-.portfolio nav .portfolioBar.state2 .portfolioBar-inner{
-  width:24px;
-  margin-left:63px;
-}
-.portfolio nav .portfolioBar.state3 .portfolioBar-inner{
-  width:67px;
-  margin-left:122px;
-}
-.portfolio .works{
-  position:relative;
-  height:570px;
-  margin-top: 30px;
-}
-.portfolio .works .big{
-  background-size: cover;
-  left:0;
-  top:0;
-  position:absolute;
-  padding:0px 10px;
-}
-.portfolio .works .big img{
-  width:600px;
-  height:570px;
-  background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-}
-.portfolio .works .small-1{
-  background-size: cover;
-  left:620px;
-  top:0;
-  position:absolute;
-  padding:0px 10px 20px;
-}
-.portfolio .works .small-1 img{
-  width:290px;
-  height:276px;
-  background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-}
-.portfolio .works .small-2{
-  background-size: cover;
-  left:620px;
-  top:296px;
-  position:absolute;
-  padding:0px 10px;
-}
-.portfolio .works .small-2 img{
-  width:290px;
-  height:276px;
-  background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-}
+hr{border:none;border:1px solid rgb(222, 222, 222);}
+.clearfix::after{content:'';display:block;clear:both;}
+.topNavBar nav>ul{list-style:none;margin:0;padding:0;}
+.topNavBar nav>ul>li{float:left;margin-left:17px;margin-right:17px;}
+.topNavBar nav>ul>li>a{font-size:12px;color:#b7b7b7;font-weight:bold;border-top:3px solid transparent;
+                      border-bottom:3px solid transparent;padding-top:10px;padding-bottom:10px;display:block;text-decoration: none;}
+.topNavBar nav>ul>li>a:hover{border-bottom:3px solid #e06563;}
+.topNavBar{padding:10px 0px;position:fixed;top:0;left:0;width: 100%;}
+.topNavBar-inner{padding:0px 20px;}
+.topNavBar .logo{font-size: 25px;font-family: "Yu Gothic";color:inherit;text-decoration: none;padding-top:0px;padding-bottom:0px;}
+.topNavBar .logo>.rs{margin-right:4px;color:#E6686A;}
+.topNavBar .logo>.card{color:#9A9DA2;}
+.banner{background-image: url(./img/cover.jpg); height:515px;background-position:center center;background-size: cover;}
+.banner .mask{height:515px;background-color: rgba(0,0,0,0.63);}
+.userCard{max-width:930px;margin-left:auto;margin-right:auto;background-color: rgb(253, 253, 253);box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
+img{width: 280px;height: 390px;}
+.userCard .welcome{display: inline-block;background-color: #e8676b;color: white;font-weight: bold;font-size: 14px;padding:8px 12px;margin-bottom:38px;position: relative;}
+.userCard .profile{padding:57px 54px 15px;}
+.userCard .picture{float: left;padding: 10px 72px 0px 10px;}
+.userCard .text{float: left;}
+.userCard .text h1{margin-bottom: 10px;font-weight: bold;}
+.userCard .text p{margin-bottom: 28px;}
+.userCard .text dl{margin-top: 28px;}
+.userCard .text dl>dt{float:left;width:40%;margin-bottom:22px;font-weight:bold;}
+.userCard .text dl>dd{float:left;width:60%;margin-bottom:22px;color: #9da0a7;}
+.userCard .welcome .triangle{display: block;border: 10px solid transparent;width: 0px;border-left-color: #e8676b;
+border-top-width: 0px;position: absolute;top: 100%;left:5px;}
+.userCard footer{background-color:#E6686A;text-align: center;padding:15px 0px;}
+.userCard footer a{text-decoration: none;display: inline-block;border-radius: 50%;width: 46px;line-height: 30px;padding: 8px 0px;margin:5px 15px;}
+.userCard footer a:hover{background-color: rgba(0, 0, 0, 0.1);}
+.userCard footer a svg{color: #fff;width:26px;height:30px;vertical-align: top;}
+body>main{margin-top:-340px;}
+.download_txt,.skills,.portfolio{text-align: center;max-width: 930px;margin-left: auto;margin-right: auto;}
+body .download_txt .download_txt_wrapper a{display:inline-block;text-decoration: none;color: #3d4451;font-size：15px;line-height: 1.1;
+font-weight: 700;border: 1px solid #cbcdcf;border-radius: 3px;padding: 21px 55px;margin: 35px 5px 30px;letter-spacing: 0.01em;transition: box-shadow 0.3s;}
+body .download_txt .download_txt_wrapper a:hover{box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
+body .download_txt p{font-size:20px;line-height:1.6;font-family: 楷体;}
+.skills h2,.portfolio h2{color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;text-align: center;margin: 0 0 25px;}
+.skills,.portfolio{padding:70px 0 0;}
+body .skills ol{background: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);padding:51px 40px 6px;}
+body .skills ol>li{float:left;width:48.5%;margin-bottom:40px;}
+body .skills ol>li:nth-child(even){float:right;}
+body .skills ol>li>h3{font-size: 14px;margin-bottom:5px;text-align: initial;}
+.skills .progressBar{height:5px;line-height: 1.5;border-radius: 5px;background-color:rgb(250, 225, 225);}
+.skills .progressBar .progress{width:30%;height:100%;border-radius: 5px;background-color: #e8676b;}
+.portfolio>nav{display: inline-block;vertical-align: top;}
+.portfolio>nav>ol{display:inline-block;vertical-align:top;}
+.portfolio>nav>ol>li{float:left;padding-right:34px;font-size: 13px;font-weight: 600;line-height: 1.5;cursor: pointer;}
+.portfolio>nav>ol>li:nth-child(3){padding-right:0px;}
+.portfolio{margin-bottom:70px;}
+.portfolio nav .portfolioBar{height: 5px;margin: 10px auto 0;background-color: #fff;border-radius: 5px;}
+.portfolio nav .portfolioBar .portfolioBar-inner{height:100%;border-radius: 5px;background-color: #e8676b;transition-duration: 1s;}
+.portfolio nav .portfolioBar.state1 .portfolioBar-inner{width:24px;margin-left:0;}
+.portfolio nav .portfolioBar.state2 .portfolioBar-inner{width:24px;margin-left:63px;}
+.portfolio nav .portfolioBar.state3 .portfolioBar-inner{width:67px;margin-left:122px;}
+.portfolio .works{position:relative;height:570px;margin-top: 30px;}
+.portfolio .works .big{background-size: cover;left:0;top:0;position:absolute;padding:0px 10px;}
+.portfolio .works .big img{width:600px;height:570px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
+.portfolio .works .small-1{background-size: cover;left:620px;top:0;position:absolute;padding:0px 10px 20px;}
+.portfolio .works .small-1 img{width:290px;height:276px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
+.portfolio .works .small-2{background-size: cover;left:620px;top:296px;position:absolute;padding:0px 10px;}
+.portfolio .works .small-2 img{width:290px;height:276px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
