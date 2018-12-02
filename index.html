@@ -31,15 +31,29 @@
                 <a href="#" class="logo" alt="logo" style="float:left;">
                         <span class="rs">RS</span><span class="card">card</span>
                 </a>
-                <nav style="float:right;">    
+                <nav class="menu" style="float:right;">    
                      <ul class="clearfix">
-                        <li ><a href="#">关于</a></li>        
-                        <li ><a href="#">技能</a></li>
-                        <li ><a href="#">作品</a></li>
-                        <li ><a href="#">博客</a></li>
-                        <li ><a href="#">日历</a></li>
-                        <li ><a href="#">联系方式</a></li>
-                        <li ><a href="#">其他</a></li>
+                        <li ><a href="#siteAbout">关于</a></li>        
+                        <li ><a href="#siteSkills">技能</a></li>
+                        <li>
+                            <a href="#sitePortfolio">作品</a>
+                            <ul class="submenu">
+                                <li>作品1</li>
+                                <li>作品2</li>
+                                <li>作品3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#siteBlogs">博客</a>
+                            <ul class="submenu">
+                                <li>博客1</li>
+                                <li>博客2</li>
+                                <li>博客3</li>
+                            </ul>
+                        </li>
+                        <li ><a href="#siteCalendar">日历</a></li>
+                        <li ><a href="#siteContacts">联系方式</a></li>
+                        <li ><a href="#siteOthers">其他</a></li>
                      </ul>
                 </nav>
         </div>
@@ -47,7 +61,7 @@
     <div class="banner">
         <div class="mask"></div>
     </div>
-    <main>
+    <main id="siteAbout">
         <div class="userCard">
                 <div class="profile clearfix">
                     <div class="picture">
@@ -108,7 +122,7 @@
             正在学习前端，CSS已经学了几节课了，细节的知识点很多。学会了使用开发者工具进行调试，直接看尺寸，没有用工具去测量
         </p>  
     </section>
-    <section class="skills">
+    <section id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -155,7 +169,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="sitePortfolio" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -191,16 +205,45 @@
             </div>
         </div>
         <script>
+            /*1.0 loading animation.18-12-2*/
             setTimeout(function(){preloading.classList.remove('active');},1000);
-
+            /*2.0 会动的topNavBar.18-12-2*/
             window.onscroll = function(){
-                if(window.scrollY > 0){
-                    topNavBar.classList.add('sticky');
-                }else{
-                    topNavBar.classList.remove('sticky');
+                if(window.scrollY > 0){topNavBar.classList.add('sticky');}
+                else{topNavBar.classList.remove('sticky');}
+            }
+            /*3.0 加二级菜单18-12-2*/ 
+            let liTags = document.querySelectorAll('nav.menu > ul > li');
+            //console.log(aTags) //aTags是hash
+            for(let i=0;i<liTags.length;i++){
+                liTags[i].onmouseenter = function(x){
+                    //console.log('mouseenter');
+                    let li = x.currentTarget; //liTags不可靠，最好不要用aTags[i]
+                    li.classList.add('active');
+                }
+                liTags[i].onmouseleave = function(y){
+                    //console.log('mouseleave');
+                    let li = y.currentTarget; //aTags不可靠，最好不要用aTags[i]
+                    li.classList.remove('active');
                 }
             }
-            
+            /*4.0 阻止浏览器默认的滚动，自己设置滚动到指定元素.18-12-2*/
+            let aTags = document.querySelectorAll('nav.menu > ul > li >a')//ATags是个NodeList
+            //console.log(aTags);
+            for(let i = 0 ; i < aTags.length ; i++){
+                aTags[i].onclick = function(x){
+                    //console.log(x);  //MouseEvent 也是hash
+                    x.preventDefault();
+                    let a = x.currentTarget; //当前监听对象
+                    console.log(a);
+                    let href = a.getAttribute('href'); //#siteAbout #siteSkills
+                    console.log(href);
+                    let element = document.querySelector(href); //返回id为siteAbout或siteSkills的元素
+                    console.log(element);
+                    let top = element.offsetTop;  //相对视口的高度，高度不随滑动改变
+                    window.scrollTo(0,top - 55);  //(左右滑，上下滑动)手动设置滑动位置
+                }
+            }
         </script>
     </section>
  </body>
