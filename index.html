@@ -22,6 +22,7 @@
  </head>
 
  <body>
+     
     <div id="preloading" class="site-welcome active">
         <div class="loading"></div>
     </div>
@@ -61,7 +62,7 @@
     <div class="banner">
         <div class="mask"></div>
     </div>
-    <main id="siteAbout">
+    <main data-x id="siteAbout">
         <div class="userCard">
                 <div class="profile clearfix">
                     <div class="picture">
@@ -122,7 +123,7 @@
             正在学习前端，CSS已经学了几节课了，细节的知识点很多。学会了使用开发者工具进行调试，直接看尺寸，没有用工具去测量
         </p>  
     </section>
-    <section id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -169,7 +170,7 @@
             </li>
         </ol>
     </section>
-    <section id="sitePortfolio" class="portfolio">
+    <section data-x id="sitePortfolio" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -204,47 +205,103 @@
                 <img src="./img/3.jpg" alt="作品3">
             </div>
         </div>
-        <script>
-            /*1.0 loading animation.18-12-2*/
-            setTimeout(function(){preloading.classList.remove('active');},1000);
-            /*2.0 会动的topNavBar.18-12-2*/
-            window.onscroll = function(){
-                if(window.scrollY > 0){topNavBar.classList.add('sticky');}
-                else{topNavBar.classList.remove('sticky');}
-            }
-            /*3.0 加二级菜单18-12-2*/ 
-            let liTags = document.querySelectorAll('nav.menu > ul > li');
-            //console.log(aTags) //aTags是hash
-            for(let i=0;i<liTags.length;i++){
-                liTags[i].onmouseenter = function(x){
-                    //console.log('mouseenter');
-                    let li = x.currentTarget; //liTags不可靠，最好不要用aTags[i]
-                    li.classList.add('active');
-                }
-                liTags[i].onmouseleave = function(y){
-                    //console.log('mouseleave');
-                    let li = y.currentTarget; //aTags不可靠，最好不要用aTags[i]
-                    li.classList.remove('active');
-                }
-            }
-            /*4.0 阻止浏览器默认的滚动，自己设置滚动到指定元素.18-12-2*/
-            let aTags = document.querySelectorAll('nav.menu > ul > li >a')//ATags是个NodeList
-            //console.log(aTags);
-            for(let i = 0 ; i < aTags.length ; i++){
-                aTags[i].onclick = function(x){
-                    //console.log(x);  //MouseEvent 也是hash
-                    x.preventDefault();
-                    let a = x.currentTarget; //当前监听对象
-                    console.log(a);
-                    let href = a.getAttribute('href'); //#siteAbout #siteSkills
-                    console.log(href);
-                    let element = document.querySelector(href); //返回id为siteAbout或siteSkills的元素
-                    console.log(element);
-                    let top = element.offsetTop;  //相对视口的高度，高度不随滑动改变
-                    window.scrollTo(0,top - 55);  //(左右滑，上下滑动)手动设置滑动位置
-                }
-            }
-        </script>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script>
+        /*1.0 loading animation.18-12-2*/
+        setTimeout(function(){preloading.classList.remove('active');},2300);
+        /*2.0 会动的topNavBar.18-12-2*/
+        window.onscroll = function(){
+            console.log(window.scrollY)
+            if(window.scrollY > 0){topNavBar.classList.add('sticky');}
+            else{topNavBar.classList.remove('sticky');}
+
+            /*5.0 某元素出于屏幕中心，menu自动高亮*/
+            let specialTags = document.querySelectorAll('[data-x]');//元素hash
+            let minIndix = 0;
+            for(let i = 1;i<specialTags.length;i++){
+                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndix].offsetTop - window.scrollY))
+                minIndix = i; //找最小距离差
+                console.log(minIndix);
+            }
+            let id = specialTags[minIndix].id;
+            console.log(id);
+            let a = document.querySelector('a[href="#' + id + '"]'); //通过id找标签
+            let li = a.parentNode //a的父元素
+            let brothersAndMe = li.parentNode.children //是hash a的兄弟姐妹
+            for(let i=0;i<brothersAndMe.length;i++){   //遍历每一个兄弟姐妹，移除active属性
+                brothersAndMe[i].classList.remove('active');
+            }
+            li.classList.add('active');
+        }
+        /*3.0 加二级菜单18-12-2*/ 
+        let liTags = document.querySelectorAll('nav.menu > ul > li');
+        //console.log(aTags) //aTags是hash
+        for(let i=0;i<liTags.length;i++){
+            liTags[i].onmouseenter = function(x){
+                //console.log('mouseenter');
+                let li = x.currentTarget; //liTags不可靠，最好不要用aTags[i]
+                li.classList.add('active');
+            }
+            liTags[i].onmouseleave = function(y){
+                //console.log('mouseleave');
+                let li = y.currentTarget; //aTags不可靠，最好不要用aTags[i]
+                li.classList.remove('active');
+            }
+        }
+        /*4.0 阻止浏览器默认的滚动，自己设置滚动到指定元素.18-12-2
+        let aTags = document.querySelectorAll('nav.menu > ul > li >a')//ATags是个NodeList
+        //console.log(aTags);
+        for(let i = 0 ; i < aTags.length ; i++){
+            aTags[i].onclick = function(x){
+                //console.log(x);  //MouseEvent 也是hash
+                x.preventDefault();
+                let a = x.currentTarget; //当前监听对象
+                //console.log(a);
+                let href = a.getAttribute('href'); //#siteAbout #siteSkills
+                //console.log(href);
+                let element = document.querySelector(href); //返回id为siteAbout或siteSkills的元素
+                //console.log(element);
+                let top = element.offsetTop;  //相对视口的高度，高度不随滑动改变
+                //let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop; //上面四句可归为一句
+                window.scrollTo(0,top - 55);  //(左右滑，上下滑动)手动设置滑动位置，一下就到位了
+            }
+        }*/
+
+        /*4.1 点击menu,设置自然滚动tween 18-12-5*/
+          // 设置循环动画
+        function animate(time) {
+                    requestAnimationFrame(animate);
+                    TWEEN.update(time);
+                }
+        requestAnimationFrame(animate);
+        let aTags = document.querySelectorAll('nav.menu > ul > li >a')//ATags是个NodeList
+        //console.log(aTags);
+        for(let i = 0 ; i < aTags.length ; i++){
+            aTags[i].onclick = function(x){
+                //console.log(x);  //MouseEvent 也是hash
+                x.preventDefault();
+                let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop; //上面四句可归为一句
+                //window.scrollTo(0,top - 55);  //(左右滑，上下滑动)手动设置滑动位置
+                let currentTop = window.scrollY; //当前滑动的高度
+               // console.log(currentTop);
+                let targetTop = top -48;
+                let s = targetTop - currentTop; //距离
+                var t = Math.abs((s/100)*100)   //移动时间
+                var coords = { y: currentTop }; // 起始点 (0, 0)
+                if(t>400){ t = 400; }
+                var tween = new TWEEN.Tween(coords) // 创建一个新的tween用来改变 'coords'
+                        .to({ y: targetTop }, t) // 在1s内移动至 (300, 200)
+                        .easing(TWEEN.Easing.Quadratic.InOut) // 使用缓动功能使的动画更加平滑
+                        .onUpdate(function(){ // 在 tween.js 更新 'coords' 后调用
+                            // 将 'box' 移动到 'coords' 所描述的位置，配合 CSS 过渡
+                            window.scrollTo(0,coords.y);
+                        })
+                        .start(); // 立即开始 tween
+            }
+        }
+        /*5.0*/
+        
+    </script>
  </body>
 </html>
