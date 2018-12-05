@@ -209,44 +209,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script>
         /*1.0 loading animation.18-12-2*/
-        setTimeout(function(){preloading.classList.remove('active');},2300);
+        setTimeout(function(){preloading.classList.remove('active');},1500);
+
+        /*6.0添加页面内容随滚动的动画-这是一次性的还存在bug*/
+        //添加offset类
+        let specialTags = document.querySelectorAll('[data-x]');//元素hash
+        for(let i = 0;i<specialTags.length; i++){
+            specialTags[i].classList.add('offset');
+        }
+        findClosest();
         /*2.0 会动的topNavBar.18-12-2*/
         window.onscroll = function(){
-            console.log(window.scrollY)
             if(window.scrollY > 0){topNavBar.classList.add('sticky');}
             else{topNavBar.classList.remove('sticky');}
-
+           findClosest();
+        }
+        function findClosest(){
             /*5.0 某元素出于屏幕中心，menu自动高亮*/
             let specialTags = document.querySelectorAll('[data-x]');//元素hash
             let minIndix = 0;
             for(let i = 1;i<specialTags.length;i++){
                 if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndix].offsetTop - window.scrollY))
-                minIndix = i; //找最小距离差
-                console.log(minIndix);
+                minIndix = i; //找最小距离差 minIndex就是里窗口顶部最近的元素
+                //console.log(minIndix);
             }
+
+            specialTags[minIndix].classList.remove('offset');
+
             let id = specialTags[minIndix].id;
-            console.log(id);
             let a = document.querySelector('a[href="#' + id + '"]'); //通过id找标签
             let li = a.parentNode //a的父元素
             let brothersAndMe = li.parentNode.children //是hash a的兄弟姐妹
-            for(let i=0;i<brothersAndMe.length;i++){   //遍历每一个兄弟姐妹，移除active属性
-                brothersAndMe[i].classList.remove('active');
+            for(let i=0;i<brothersAndMe.length;i++){   //遍历每一个兄弟姐妹，移除highLight属性
+                brothersAndMe[i].classList.remove('highLight');
             }
-            li.classList.add('active');
+            li.classList.add('highLight');
         }
+            
         /*3.0 加二级菜单18-12-2*/ 
         let liTags = document.querySelectorAll('nav.menu > ul > li');
         //console.log(aTags) //aTags是hash
         for(let i=0;i<liTags.length;i++){
             liTags[i].onmouseenter = function(x){
-                //console.log('mouseenter');
-                let li = x.currentTarget; //liTags不可靠，最好不要用aTags[i]
-                li.classList.add('active');
+                //liTags不可靠，最好不要用aTags[i]
+                x.currentTarget.classList.add('active');
             }
             liTags[i].onmouseleave = function(y){
-                //console.log('mouseleave');
-                let li = y.currentTarget; //aTags不可靠，最好不要用aTags[i]
-                li.classList.remove('active');
+                //aTags不可靠，最好不要用aTags[i]
+                y.currentTarget.classList.remove('active');
             }
         }
         /*4.0 阻止浏览器默认的滚动，自己设置滚动到指定元素.18-12-2
