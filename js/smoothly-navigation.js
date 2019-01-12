@@ -6,7 +6,9 @@
     TWEEN.update(time);
   }
   requestAnimationFrame(animate);
-  let aTags = document.querySelectorAll('nav.menu > ul > li >a')//ATags是个NodeList
+  var view = document.querySelector('nav.menu')
+  view.style.border = '1px solid red';
+  let aTags = view.querySelectorAll('ul > li >a')//ATags是个NodeList
   //console.log(aTags);
   for(let i = 0 ; i < aTags.length ; i++){
       aTags[i].onclick = function(x){

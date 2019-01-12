@@ -159,20 +159,24 @@
     <section data-x id="sitePortfolio" class="portfolio">
       <h2>作品集</h2>
        <!--引进轮播-->
-       <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src="./img/works/nav.jpg" class="swiper-slide">
-                <img src="./img/works/canvas.jpg" class="swiper-slide">
-                <img src="./img/works/apple.jpg" class="swiper-slide">
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+       <!--这就是init-Swiper.js模块的view，用户看得见的东西-->
+       <div id=mySlides class="mySlides">
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <img src="./img/works/nav.jpg" class="swiper-slide">
+                        <img src="./img/works/canvas.jpg" class="swiper-slide">
+                        <img src="./img/works/apple.jpg" class="swiper-slide">
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+       </div>
+       
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
