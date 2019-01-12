@@ -65,23 +65,8 @@ body .skills ol>li:nth-child(even){float:right;}
 body .skills ol>li>h3{font-size: 14px;margin-bottom:5px;text-align: initial;}
 .skills .progressBar{height:5px;line-height: 1.5;border-radius: 5px;background-color:rgb(250, 225, 225);overflow: hidden;}
 .skills .progressBar .progress{width:30%;height:100%;border-radius: 5px;background-color: #e8676b;transform: translateX(0);transition: all 1s;}
-.skills.offset .progress{
-  transform: translateX(-100%);
-}
-.portfolio>nav{display: inline-block;vertical-align: top;}
-.portfolio>nav>ol{display:inline-block;vertical-align:top;}
-.portfolio>nav>ol>li{float:left;padding-right:34px;font-size: 13px;font-weight: 600;line-height: 1.5;cursor: pointer;}
-.portfolio>nav>ol>li:nth-child(3){padding-right:0px;}
+.skills.offset .progress{transform: translateX(-100%);}
 .portfolio{margin-bottom:70px;}
-.portfolio nav .portfolioBar{height: 5px;margin: 10px auto 0;background-color: #fff;border-radius: 5px;}
-.portfolio nav .portfolioBar .portfolioBar-inner{height:100%;border-radius: 5px;background-color: #e8676b;transition-duration: 1s;}
-.portfolio nav .portfolioBar.state1 .portfolioBar-inner{width:24px;margin-left:0;}
-.portfolio nav .portfolioBar.state2 .portfolioBar-inner{width:24px;margin-left:63px;}
-.portfolio nav .portfolioBar.state3 .portfolioBar-inner{width:67px;margin-left:122px;}
-.portfolio .works{position:relative;height:570px;margin-top: 30px;}
-.portfolio .works .big{background-size: cover;left:0;top:0;position:absolute;padding:0px 10px;}
-.portfolio .works .big img{width:600px;height:570px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
-.portfolio .works .small-1{background-size: cover;left:620px;top:0;position:absolute;padding:0px 10px 20px;}
-.portfolio .works .small-1 img{width:290px;height:276px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
-.portfolio .works .small-2{background-size: cover;left:620px;top:296px;position:absolute;padding:0px 10px;}
-.portfolio .works .small-2 img{width:290px;height:276px;background-color: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
+.portfolio .swiper-container {width: 668px;height: 501px;background: white;}
+.portfolio .swiper-button-prev{background-color: white;width:44px;height:44px;border-radius: 50%;left:44px;top:372px;}
+.portfolio .swiper-button-next{background-color: white;width:44px;height:44px;border-radius: 50%;right:44px;top:372px;}

@@ -18,15 +18,13 @@
                         100%{width: 70px;height: 70px;opacity: 0;}  }
     </style>
     <title>廖淋艳的个人简历</title>
+    <link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" href="./style.css">
- </head>
-
- <body>
-     
+</head>
+ <body> 
     <div id="preloading" class="site-welcome active">
         <div class="loading"></div>
     </div>
-     
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
                 <a href="#" class="logo" alt="logo" style="float:left;">
@@ -171,42 +169,44 @@
         </ol>
     </section>
     <section data-x id="sitePortfolio" class="portfolio">
-        <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolioAll">所有</li>
-                <li id="portfolioFrameworks">框架</li>
-                <li id="portfolioVallina">原生JS&amp;CSS</li>
-            </ol>
-            <div id="bar" class="portfolioBar state1">
-                <div class="portfolioBar-inner">
-                </div>
+      <h2>作品集</h2>
+       <!--引进轮播-->
+       <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./img/works/nav.jpg" class="swiper-slide">
+                <img src="./img/works/canvas.jpg" class="swiper-slide">
+                <img src="./img/works/apple.jpg" class="swiper-slide">
             </div>
-            <script>
-                portfolioAll.onclick= function(){
-                    bar.className = 'portfolioBar state1'
-                }
-                portfolioFrameworks.onclick= function(){
-                    bar.className = 'portfolioBar state2'
-                }
-                portfolioVallina.onclick= function(){
-                    bar.className = 'portfolioBar state3'
-                } 
-            </script>
-        </nav>
-        <div class="works">
-            <div class="big">
-                <img src="./img/1.jpg" alt="作品1">
-            </div>
-            <div class="small-1">
-                <img src="./img/2.jpg" alt="作品2">
-            </div>
-            <div class="small-2">
-                <img src="./img/3.jpg" alt="作品3">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
         </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        //direction: 'vertical',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+
+      })
+    </script>
     <script>
         /*1.0 loading animation.18-12-2*/
         setTimeout(function(){preloading.classList.remove('active');},1500);
