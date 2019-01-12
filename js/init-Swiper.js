@@ -1,4 +1,5 @@
-var mySwiper = new Swiper ('.swiper-container', {
+!function() {
+  var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
     //direction: 'vertical',
     loop: true,
@@ -15,3 +16,4 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
 
   })
+}.call()
