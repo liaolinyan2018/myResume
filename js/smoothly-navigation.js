@@ -7,7 +7,7 @@
   }
   requestAnimationFrame(animate);
   var view = document.querySelector('nav.menu')
-  view.style.border = '1px solid red';
+  // view.style.border = '1px solid red';
   let aTags = view.querySelectorAll('ul > li >a')//ATags是个NodeList
   //console.log(aTags);
   for(let i = 0 ; i < aTags.length ; i++){

@@ -1,6 +1,6 @@
 !function() {
   var view = document.querySelector('#mySlides') //这样HTML也分块了
-  view.style.border = '1px solid red'
+  // view.style.border = '1px solid red'
   var mySwiper = new Swiper (view.querySelector('.swiper-container'), {
     // Optional parameters
     //direction: 'vertical',
