@@ -177,12 +177,14 @@
                 <div class="swiper-button-next"></div>
        </div>
     </section>
-    <section>
+    <section id="message" class="message">
         <h2>留言板</h2>
-        <ol id="messageList" style="border:1px solid red;">
-
+        <ol id="messageList">
         </ol>
-        <form id="postMessageForm" style="width: 700px;margin: 50px auto;">
+        <form id="postMessageForm">
+            <label for="">姓名</label>
+            <input type="text" name="name">
+            <label for="">内容</label>
             <input type="text" name="content">
             <input type="submit" value="提交">
         </form>

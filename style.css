@@ -62,21 +62,36 @@ border-top-width: 0px;position: absolute;top: 100%;left:5px;}
 .userCard footer a:hover{background-color: rgba(0, 0, 0, 0.1);}
 .userCard footer a svg{color: #fff;width:26px;height:30px;vertical-align: top;}
 body>main{margin-top:-340px;}
-.download_txt,.skills,.portfolio{text-align: center;max-width: 930px;margin-left: auto;margin-right: auto;}
-body .download_txt .download_txt_wrapper a{display:inline-block;text-decoration: none;color: #3d4451;font-size：15px;line-height: 1.1;
+section.download_txt,.skills,.portfolio{text-align: center;max-width: 930px;margin-left: auto;margin-right: auto;}
+section.download_txt .download_txt_wrapper a{display:inline-block;text-decoration: none;color: #3d4451;font-size：15px;line-height: 1.1;
 font-weight: 700;border: 1px solid #cbcdcf;border-radius: 3px;padding: 21px 55px;margin: 35px 5px 30px;letter-spacing: 0.01em;transition: box-shadow 0.3s;}
-body .download_txt .download_txt_wrapper a:hover{box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
-body .download_txt p{font-size:20px;line-height:1.6;font-family: 楷体;}
-.skills h2,.portfolio h2{color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;text-align: center;margin: 0 0 25px;}
-.skills,.portfolio{padding:70px 0 0;}
-body .skills ol{background: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);padding:51px 40px 6px;}
-body .skills ol>li{float:left;width:48.5%;margin-bottom:40px;}
-body .skills ol>li:nth-child(even){float:right;}
-body .skills ol>li>h3{font-size: 14px;margin-bottom:5px;text-align: initial;}
-.skills .progressBar{height:5px;line-height: 1.5;border-radius: 5px;background-color:rgb(250, 225, 225);overflow: hidden;}
-.skills .progressBar .progress{width:30%;height:100%;border-radius: 5px;background-color: #e8676b;transform: translateX(0);transition: all 1s;}
-.skills.offset .progress{transform: translateX(-100%);}
-.portfolio{margin-bottom:70px;}
-.portfolio .swiper-container {width: 668px;height: 501px;background: white;}
-.portfolio .swiper-button-prev{background-color: white;width:44px;height:44px;border-radius: 50%;left:44px;top:372px;}
-.portfolio .swiper-button-next{background-color: white;width:44px;height:44px;border-radius: 50%;right:44px;top:372px;}
+section.download_txt .download_txt_wrapper a:hover{box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
+section.download_txt p{font-size:20px;line-height:1.6;font-family: 楷体;}
+section.skills h2,.portfolio h2,.message h2{color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;text-align: center;margin: 0 0 25px;}
+section.skills,.portfolio,.message{padding:70px 0 0;}
+section.skills ol{background: #fff;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);padding:51px 40px 6px;}
+section.skills ol>li{float:left;width:48.5%;margin-bottom:40px;}
+section.skills ol>li:nth-child(even){float:right;}
+section.skills ol>li>h3{font-size: 14px;margin-bottom:5px;text-align: initial;}
+section.skills .progressBar{height:5px;line-height: 1.5;border-radius: 5px;background-color:rgb(250, 225, 225);overflow: hidden;}
+section.skills .progressBar .progress{width:30%;height:100%;border-radius: 5px;background-color: #e8676b;transform: translateX(0);transition: all 1s;}
+section.skills.offset .progress{transform: translateX(-100%);}
+section.portfolio .swiper-container {width: 668px;height: 501px;background: white;}
+section.portfolio .swiper-button-prev{background-color: white;width:44px;height:44px;border-radius: 50%;left:44px;top:372px;}
+section.portfolio .swiper-button-next{background-color: white;width:44px;height:44px;border-radius: 50%;right:44px;top:372px;}
+section.message >ol{
+  max-width: 668px;
+  margin:0 auto;
+  background:#f4f4f4;
+  border-top:1px solid #ececec;
+}
+section.message >ol>li{
+padding:14px;
+border-bottom:1px solid #ddd;
+}
+section.message >form{
+  max-width: 668px;
+  margin:0 auto;
+  padding-top:30px;
+  margin-bottom:30px;
+}
