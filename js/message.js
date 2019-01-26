@@ -11,8 +11,8 @@ query.find()
   .then(
     function(messages) {
       console.log(messages)
-      console.log(messages[0].attributes)
-      console.log(messages[1].attributes)
+      console.log(messages[0].attributes) //留言的内容
+      console.log(messages[1].attributes) //留言的内容
       let array = messages.map((item) => item.attributes)
       array.forEach((item) => {
         let li = document.createElement('li')
@@ -20,16 +20,8 @@ query.find()
         let messageList = document.querySelector('#messageList')
         messageList.appendChild(li)
       })
-    },
-    function(error) {
-      //异常处理
     })
-    .then(
-      () =>{},() => {console.log(error)}
-    );
-
-
-
+    
 let myForm = document.querySelector('#postMessageForm')
 myForm.addEventListener('submit',function(e) {
   e.preventDefault()
