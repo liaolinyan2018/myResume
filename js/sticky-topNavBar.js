@@ -3,7 +3,7 @@
     var view = document.querySelector('#topNavBar')
     var controller = {
         view: null,
-        init: function(){
+        init: function(view){
             this.view = view //controller.view = document.querySelector('#topNavBar')
             this.bindEvents()
             //this.bindEvents.call(this)
