@@ -1,5 +1,5 @@
 !function() {
-  var view = document.querySelector('section.message')
+
   var model = {
     init: function(){
       //初始化AV对象
@@ -7,12 +7,12 @@
       var APP_KEY = 'Srt6LLMtTSBk7VSfSrq6cmUA'
       AV.init({ appId: APP_ID, appKey: APP_KEY });
     },
-    // 保存数据
+    // 获取数据
     fetch: function(){
       var query = new AV.Query('Message');
       return query.find()  //返回promise对象
     },
-    // 创建数据
+    // 创建和保存数据
     save: function(name,content){
       var Message = AV.Object.extend('Message');
       var message = new Message();
@@ -22,6 +22,9 @@
       })
     }
   }
+
+  var view = document.querySelector('section.message')
+
   var controller = {
     view: null,
     model: null,
