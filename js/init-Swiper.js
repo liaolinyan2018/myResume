@@ -9,9 +9,9 @@
       this.initSwiper()
     },
     initSwiper: function(){
-      this.swiper = new Swiper (
-        this.view.querySelector('.swiper-container'),this.swiperOptions)
+      this.swiper = new Swiper (this.view.querySelector('.swiper-container'),this.swiperOptions)
     } 
   }
   controller.init(view)//controller.init.call(controller,view)
+  console.log(controller.swiper)
 }.call()
