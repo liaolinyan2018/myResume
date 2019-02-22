@@ -13,5 +13,4 @@
     } 
   }
   controller.init(view)//controller.init.call(controller,view)
-  console.log(controller.swiper)
 }.call()

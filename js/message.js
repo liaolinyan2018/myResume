@@ -1,5 +1,4 @@
 !function() {
-
   var model = {
     init: function(){
       //初始化AV对象
