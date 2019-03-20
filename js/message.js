@@ -36,14 +36,18 @@
       this.loadMessages()
       this.bindEvents()
     },
-    loadMessages: function(){
-      //展示历史留言
+    loadMessages: function(){//展示历史留言
       this.model.fetch().then(
         (messages) => {
           let array = messages.map((item) => item.attributes)
           array.forEach((item) => {
             let li = document.createElement('li')
-            li.innerText = `${item.name}:${item.content}`
+            let h2 = document.createElement('h2')
+            let p = document.createElement('p')
+            h2.innerText = item.name
+            li.appendChild(h2)
+            p.innerText = item.content
+            li.appendChild(p)
             this.messageList.appendChild(li)
           })
         })
@@ -60,11 +64,16 @@
       let content= myForm.querySelector('input[name=content]').value
       let name = myForm.querySelector('input[name=name]').value
       this.model.save(name,content).then(function(object) {
-      let li = document.createElement('li')
-      li.innerText = `${object.attributes.name}:${object.attributes.content}`
-      let messageList = document.querySelector('#messageList')
-      messageList.appendChild(li)
-      myForm.querySelector('input[name=content]').value = ''
+        let messageList = document.querySelector('#messageList')
+        let li = document.createElement('li')
+        let h2 = document.createElement('h2')
+        let p = document.createElement('p')
+        h2.innerText = object.attributes.name
+        li.appendChild(h2)
+        p.innerText = object.attributes.content
+        li.appendChild(p)
+        messageList.appendChild(li)
+        myForm.querySelector('input[name=content]').value = ''
       })
     }
   }
