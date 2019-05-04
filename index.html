@@ -4,48 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="//at.alicdn.com/t/font_912092_dkghl5t63so.js"></script>
+    <script async src="//at.alicdn.com/t/font_912092_dkghl5t63so.js"></script>
+    <script src="./js/preloading-animation.js"></script>
     <title>廖淋艳的在线简历网站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
- <body> 
+ <body>
     <div id="preloading" class="site-welcome active">
         <div class="loading"></div>
     </div>
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
-                <a href="#" class="logo" alt="logo" style="float:left;">
-                        <span class="rs">RS</span><span class="card">card</span>
-                </a>
-                <nav class="menu" style="float:right;">    
-                    <ul class="clearfix">
-                        <li ><a href="#siteAbout">关于</a></li>        
-                        <li ><a href="#siteSkills">技能</a></li>
-                        <li>
-                            <a href="#sitePortfolio">作品</a>
-                            <ul class="submenu">
-                                <li>我的在线简历网站</li>
-                                <li>皮卡丘</li>
-                                <li>移动端画板</li>
-                                <li>无缝轮播</li>
-                                <li>快捷导航</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="https://liaolinyan2018.github.io/" title="https://liaolinyan2018.github.io/" target="_blank">博客</a>
-                        </li>
-                        <li ><a href="#message">留言板</a></li>
-                    </ul>
-                </nav>
+            <a href="#" class="logo" alt="logo" style="float:left;">
+                <span class="rs">RS</span><span class="card">card</span>
+            </a>
+            <nav class="menu" style="float:right;">    
+                <ul class="clearfix">
+                    <li ><a href="#siteAbout">关于</a></li>        
+                    <li ><a href="#siteSkills">技能</a></li>
+                    <li>
+                        <a href="#sitePortfolio">作品</a>
+                        <ul class="portfolio-submenu">
+                            <li>我的在线简历网站</li>
+                            <li>皮卡丘</li>
+                            <li>移动端画板</li>
+                            <li>无缝轮播</li>
+                            <li>快捷导航</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://liaolinyan2018.github.io/" title="https://liaolinyan2018.github.io/" target="_blank">博客</a>
+                    </li>
+                    <li ><a href="#message">留言板</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
     <div class="banner">
-        <div class="mask"></div>
     </div>
-    <main data-x id="siteAbout">
+    <main data-x id="siteAbout" class="about">
         <div class="userCard">
-            <div class="profile clearfix">
+            <main class="profile clearfix">
                 <div class="picture">
                     <img src="./img/me.jpg" alt="我的头像">
                 </div>
@@ -67,7 +67,7 @@
                         <dd>xxx@gmail.com</dd>
                     </dl>                            
                 </div>                  
-            </div>                
+            </main>                
             <footer class="media">
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
@@ -98,9 +98,7 @@
         </div>
     </main>
     <section class="download_txt">
-        <div class="download_txt_wrapper">
-            <a class="downloadResume" href="./myResume.pdf" target="_blank" download="我的在线简历">下载PDF简历</a>
-        </div>       
+        <a class="downloadResume" href="./myResume.pdf" target="_blank" download="我的在线简历">下载PDF简历</a>
         <p>学习前端半年，能熟练使用<strong>HTML5/CSS3/JavaScript/jQuery</strong>独立编写精美页面，熟练使用<strong>ES6</strong>写代码。熟练使用常用<strong>Git</strong>命令行工具，了解<strong>Node.js/Webpack</strong>，了解<strong>Vue</strong>框架，了解<strong>模块化</strong>、<strong>工程化开发流程</strong>，有<strong>小程序</strong>、<strong>移动端开发经验</strong>。</p>
     </section>
     <section data-x id="siteSkills" class="skills">
@@ -151,20 +149,20 @@
        <!--引进轮播-->
        <!--这就是init-Swiper.js模块的view，用户看得见的东西-->
        <div id=mySlides class="mySlides">
-                <div class="swiper-container">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <img src="./img/works/nav.jpg" class="swiper-slide">
-                        <img src="./img/works/canvas.jpg" class="swiper-slide">
-                        <img src="./img/works/apple.jpg" class="swiper-slide">
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/works/nav.jpg" class="swiper-slide">
+                    <img src="./img/works/canvas.jpg" class="swiper-slide">
+                    <img src="./img/works/apple.jpg" class="swiper-slide">
                 </div>
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
        </div>
     </section>
     <section data-x id="message" class="message">
@@ -188,7 +186,6 @@
     <!-- 存储服务 -->
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js"></script>
     <!--模块化-->
-    <script src="./js/preloading-animation.js"></script>
     <script src="./js/auto-slide-up.js"></script>
     <script src="./js/init-Swiper.js"></script>
     <script src="./js/smoothly-navigation.js"></script>
